@@ -1,0 +1,27 @@
+group 'pl.devthoughts'
+version '1.0'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    springBootVersion = '1.4.0.RELEASE'
+}
+
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion"
+
+    testCompile "org.springframework:spring-test:4.3.1.RELEASE"
+    testCompile "org.springframework.boot:spring-boot-test:$springBootVersion"
+    testCompile "org.springframework.boot:spring-boot-test-autoconfigure:$springBootVersion"
+
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.assertj:assertj-core:3.4.1'
+    testCompile 'org.mockito:mockito-core:1.10.19'
+    testCompile 'com.h2database:h2:1.4.188'
+}

@@ -1,0 +1,6 @@
+spring:
+  cache:
+    type: guava
+    guava:
+      spec:
+    cache-names: xyz,abc

@@ -19,7 +19,6 @@ import static pl.devthoughts.assertj.BookAssert.assertThat;
 @RunWith(SpringRunner.class)
 public class BookRepositoryTest {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(BookRepositoryTest.class);
     private static final String TITLE = "Dune";
 
     @Autowired
@@ -33,9 +32,6 @@ public class BookRepositoryTest {
 
     @Test
     public void should_find_a_book_by_title() {
-        LOGGER.error(environment.containsProperty("etwas") + "");
-        LOGGER.error(environment.getProperty("etwas"));
-
         entityManager.persist(new Book(TITLE));
 
         Book book = bookRepository.findByTitle(TITLE);

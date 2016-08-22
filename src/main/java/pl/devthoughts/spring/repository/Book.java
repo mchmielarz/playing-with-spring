@@ -1,19 +1,25 @@
 package pl.devthoughts.spring.repository;
 
 import javax.persistence.*;
+import java.util.UUID;
 
 @Entity
-@Table(name = "ENTITIES")
+@Table(name = "BOOKS")
 public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(name = "uuid")
+    private String uuid;
+
     @Column(name = "title")
     private String title;
 
-    private Book() {}
+    private Book() {
+        this.uuid = UUID.randomUUID().toString();
+    }
 
     public Book(String title) {
         this();
@@ -28,7 +34,7 @@ public class Book {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public String getUuid() {
+        return uuid;
     }
 }

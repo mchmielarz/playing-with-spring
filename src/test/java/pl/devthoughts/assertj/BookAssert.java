@@ -1,7 +1,7 @@
 package pl.devthoughts.assertj;
 
 import org.assertj.core.api.AbstractAssert;
-import pl.devthoughts.spring.repository.Book;
+import pl.devthoughts.spring.domain.Book;
 
 import java.util.Objects;
 

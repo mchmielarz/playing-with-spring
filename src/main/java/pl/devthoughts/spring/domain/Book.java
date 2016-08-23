@@ -1,4 +1,4 @@
-package pl.devthoughts.spring.repository;
+package pl.devthoughts.spring.domain;
 
 import javax.persistence.*;
 import java.util.UUID;
@@ -26,8 +26,9 @@ public class Book {
         this.title = title;
     }
 
-    public Long getId() {
-        return id;
+    public Book(String uuid, String title) {
+        this.uuid = uuid;
+        this.title = title;
     }
 
     public String getTitle() {
@@ -36,5 +37,9 @@ public class Book {
 
     public String getUuid() {
         return uuid;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }

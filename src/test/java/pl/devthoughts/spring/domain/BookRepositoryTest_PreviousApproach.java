@@ -1,4 +1,4 @@
-package pl.devthoughts.spring.repository;
+package pl.devthoughts.spring.domain;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -53,7 +53,7 @@ public class BookServiceTest {
 
         assertThatThrownBy(
             () -> bookService.deleteBook(randomUuid))
-            .isInstanceOf(IllegalArgumentException.class)
+            .isInstanceOf(BookNotFoundException.class)
             .hasMessage("Unable to find a book with UUID " + randomUuid);
     }
 
@@ -73,7 +73,7 @@ public class BookServiceTest {
 
         assertThatThrownBy(
             () -> bookService.getBookByUuid(randomUuid))
-            .isInstanceOf(IllegalArgumentException.class)
+            .isInstanceOf(BookNotFoundException.class)
             .hasMessage("Unable to find a book with UUID " + randomUuid);
     }
 
@@ -94,7 +94,7 @@ public class BookServiceTest {
 
         assertThatThrownBy(
             () -> bookService.updateBook(randomUuid, TITLE_2))
-            .isInstanceOf(IllegalArgumentException.class)
+            .isInstanceOf(BookNotFoundException.class)
             .hasMessage("Unable to find a book with UUID " + randomUuid);
     }
 

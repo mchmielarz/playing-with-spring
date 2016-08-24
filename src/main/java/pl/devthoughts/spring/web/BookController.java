@@ -8,9 +8,12 @@ import pl.devthoughts.spring.domain.Book;
 import pl.devthoughts.spring.service.BookService;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
+import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
+import static org.springframework.http.MediaType.TEXT_HTML_VALUE;
 import static pl.devthoughts.spring.web.BookDTO.asDto;
 
 @Slf4j
@@ -55,6 +58,16 @@ public class BookController {
             .map(book -> asDto(book))
             .collect(toList());
         return new BooksDTO(books);
+    }
+
+    @GetMapping(path = "/books.html", produces = TEXT_HTML_VALUE)
+    String getHtmlBooks() {
+        String booksAsString = bookService
+            .getBooks()
+            .stream()
+            .map(book -> "<p>" + book.toString() + "</p>")
+            .collect(joining("</br>"));
+        return "<html><body>" + booksAsString + "</body></html";
     }
 
     @ExceptionHandler

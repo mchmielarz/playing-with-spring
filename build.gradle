@@ -16,8 +16,10 @@ ext {
 dependencies {
     compile "org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion"
     compile "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
-    compile "org.projectlombok:lombok:1.16.8"
+    compile 'org.projectlombok:lombok:1.16.8'
 
     testCompile "org.springframework.boot:spring-boot-starter-test:$springBootVersion"
+    testCompile 'org.seleniumhq.selenium:selenium-htmlunit-driver:2.52.0'
+    testCompile 'net.sourceforge.htmlunit:htmlunit:2.21'
     testCompile 'com.h2database:h2:1.4.188'
 }

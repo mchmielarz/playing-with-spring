@@ -1,5 +1,7 @@
 package pl.devthoughts.spring.domain;
 
+import lombok.ToString;
+
 import javax.persistence.*;
 import java.util.UUID;
 
@@ -41,5 +43,14 @@ public class Book {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    @Override
+    public String toString() {
+        return new StringBuilder()
+            .append(uuid)
+            .append(": ")
+            .append(title)
+            .toString();
     }
 }
